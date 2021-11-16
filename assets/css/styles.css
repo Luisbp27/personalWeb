@@ -9,7 +9,7 @@
 
 /*===== Colores =====*/
 :root{
-  --first-color: #4070F4;
+  --first-color: #5090ff;
   --second-color: #0E2431;
 }
 
@@ -323,20 +323,36 @@ img{
   z-index: var(--z-back);
 }
 
-.skills__html{
-  width: 95%;
+.skills__decisions {
+  width: 80%;
 }
 
-.skills__css{
-  width: 85%;
+.skills__logic {
+  width: 80%;
 }
 
-.skills__js{
+.skills__social {
+  width: 90%;
+}
+
+.skills__business {
   width: 65%;
 }
 
-.skills__ux{
+.skills__html{
+  width: 75%;
+}
+
+.skills__css{
+  width: 60%;
+}
+
+.skills__js{
   width: 85%;
+}
+
+.skills__next{
+  width: 65%;
 }
 
 .skills__img{
