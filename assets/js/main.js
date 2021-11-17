@@ -11,7 +11,7 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu');
 
-/* ===== ATIVAR Y ELIMINAR EL MENU ===== */
+/* ===== ACTIVAR Y ELIMINAR EL MENU ===== */
 const navLink = document.querySelectorAll('.nav__link');   
 
 function linkAction(){
@@ -24,6 +24,44 @@ function linkAction(){
   navMenu.classList.remove('show');
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
+
+/*=============== ACCORDION ===============*/
+const accordionItems = document.querySelectorAll('.accordion__item')
+
+// 1. Selecionar cada item
+accordionItems.forEach((item) =>{
+    const accordionHeader = item.querySelector('.accordion__header')
+
+    // 2. Seleccionar cada click del header
+    accordionHeader.addEventListener('click', () =>{
+        // 7. Crear la variable
+        const openItem = document.querySelector('.accordion-open')
+        
+        // 5. Llamar a la funcion toggle item
+        toggleItem(item)
+
+        // 8. Validar si existe la clase
+        if(openItem && openItem!== item){
+            toggleItem(openItem)
+        }
+    })
+})
+
+// 3. Crear una funcion tipo constante
+const toggleItem = (item) =>{
+    // 3.1 Crear la variable
+    const accordionContent = item.querySelector('.accordion__content')
+
+    // 6. Si existe otro elemento que contenga la clase accorion-open que remueva su clase
+    if(item.classList.contains('accordion-open')){
+        accordionContent.removeAttribute('style')
+        item.classList.remove('accordion-open')
+    }else{
+        // 4. Agregar el height maximo del content
+        accordionContent.style.height = accordionContent.scrollHeight + 'px'
+        item.classList.add('accordion-open')
+    }
+}
 
 /* ===== SCROLL ANIMATION ===== */
 const sr = ScrollReveal({
@@ -51,7 +89,9 @@ sr.reveal('.skills__data',{interval: 200});
 sr.reveal('.skills__img',{delay: 600});
 
 /*SCROLL EXPERIENCIA*/
-sr.reveal('.work__img',{interval: 200}); 
+sr.reveal('.work-subtitle',{interval: 200});
+sr.reveal('.work__table', {interval: 400}); 
+sr.reveal('.accordion__item', {interval: 200});
 
 /*SCROLL CONTACT0*/
 sr.reveal('.contact__input',{interval: 200});
