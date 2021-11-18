@@ -466,6 +466,10 @@ img {
     justify-self: center;
     border-radius: 0.75rem;
   }
+
+  .accordion__header {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 576px) {
