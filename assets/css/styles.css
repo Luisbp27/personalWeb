@@ -458,7 +458,7 @@ img {
 }
 
 /* Para móviles */ 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
   .accordion__container {
     width: 130%;
     height: auto;
@@ -470,7 +470,7 @@ img {
 
 @media screen and (min-width: 576px) {
   .accordion__container {
-    width: 150%;
+    width: 550px;
     padding: 2.5rem;
     justify-self: center;
     border-radius: 0.75rem;
