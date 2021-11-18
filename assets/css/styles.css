@@ -457,19 +457,32 @@ img {
   font-weight: 600;
 }
 
-@media screen and (min-width: 576px) {
+/* Para móviles */ 
+@media screen and (max-width: 576px) {
   .accordion__container {
-    width: 550px;
+    width: 500px;
     padding: 2.5rem;
     justify-self: center;
-    border-radius: .75rem;
+    border-radius: 0.75rem;
   }
+}
+
+@media screen and (min-width: 576px) {
+  .accordion__container {
+    width: 400px;
+    padding: 2.5rem;
+    justify-self: center;
+    border-radius: 0.75rem;
+  }
+
   .accordion__header {
     padding: 1.5rem;
   }
+
   .accordion__title {
     padding-right: 3.5rem;
   }
+
   .accordion__description {
     padding: 0 4rem 1.25rem 3.5rem;
   }
