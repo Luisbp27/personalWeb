@@ -460,15 +460,11 @@ img {
 /* Para móviles */ 
 @media screen and (max-width: 576px) {
   .accordion__container {
-    width: 135%;
+    width: 130%;
     height: auto;
     padding: 2.5rem;
     justify-self: center;
     border-radius: 0.75rem;
-  }
-
-  .accordion__header {
-    width: 100%;
   }
 }
 
