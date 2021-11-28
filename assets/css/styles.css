@@ -500,6 +500,7 @@ img {
 /* ===== CONTACTO =====*/
 .contact__input{
   width: 100%;
+  font-family: var(--body-font);
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
   padding: 1rem;
@@ -519,7 +520,7 @@ img {
 }
 
 /* ===== PIE DE PÁGINA =====*/
-.footer{
+.footer {
   background-color: var(--second-color);
   color: #fff;
   text-align: center;
@@ -527,19 +528,34 @@ img {
   padding: 2rem 0;
 }
 
-.footer__title{
+.footer__title {
   font-size: 2rem;
   margin-bottom: var(--mb-4);
 }
 
-.footer__social{
+.footer__social {
   margin-bottom: var(--mb-4);
 }
 
-.footer__icon{
+.footer__icon {
   font-size: 1.5rem;
   color: #fff;
   margin: 0 var(--mb-2)
+}
+
+.contact__container {
+  text-align: center;
+  font-weight: var(--font-semi);
+}
+
+.contact__button-footer {
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 /* ===== MEDIA QUERIES =====*/
@@ -551,17 +567,17 @@ img {
 
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   body{
     margin: 0;
   }
   
-  .section{
+  .section {
     padding-top: 4rem;
     padding-bottom: 3rem;
   }
   
-  .section-title{
+  .section-title {
     margin-bottom: var(--mb-6);
   }
   
@@ -631,14 +647,6 @@ img {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2,1fr);
     column-gap: 2rem;
-  }
-  
-  .contact__form{
-    width: 360px;
-  }
-  
-  .contact__container{
-    justify-items: center;
   }
 }
 

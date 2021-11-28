@@ -94,4 +94,5 @@ sr.reveal('.work__table', {interval: 400});
 sr.reveal('.accordion__item', {interval: 200});
 
 /*SCROLL CONTACT0*/
-sr.reveal('.contact__input', {interval: 200});
+sr.reveal('.contact__container', {interval: 200});
+sr.reveal('.contact__input', {interval: 400});
