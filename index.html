@@ -318,11 +318,18 @@
                 <h2 class="section-title">Contacto</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="form.php" class="contact__form">
-                        <input name="name" type="text" id="name" placeholder="Nombre" class="contact__input">
-                        <input type="email" id="email" placeholder="Corre Electrónico" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" placeholder="Escribe aquí" class="contact__input"></textarea>
+                    <form action="form.php" method="post" class="contact__form">
+                        <input type="text" name="name" id="name" class="contact__input" placeholder="Nombre">
+                        <input type="text" name="email" id="email" class="contact__input" placeholder="Correo Electrónico">
+                        <textarea name="message" class="contact__input" id="" cols="0" rows="10" placeholder="Escribe aquí"></textarea>
                         <input type="button" value="Enviar" class="contact__button button">
+                        <!--
+                        <label><input type="checkbox" name="acepto" value="Acepto"><font color="#ECECEC">
+                            He leído y acepto los términos y condiciones del <a href="docs/privacy.pdf">
+                                <u><font color="C2FBF3">Aviso de privacidad</font></u>
+                            </a>    
+                        </label>
+                        -->
                     </form>
                 </div>
             </section>
