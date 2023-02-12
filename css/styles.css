@@ -339,19 +339,19 @@ img {
   width: 65%;
 }
 
-.skills__html{
+.skills__html {
   width: 75%;
 }
 
-.skills__css{
+.skills__css {
   width: 60%;
 }
 
-.skills__js{
+.skills__js {
   width: 85%;
 }
 
-.skills__next{
+.skills__react {
   width: 65%;
 }
 
@@ -360,23 +360,23 @@ img {
 }
 
 .skills__c {
-  width: 65%;
-}
-
-.skills__r {
-  width: 60%;
+  width: 50%;
 }
 
 .skills__python {
-  width: 65%;
+  width: 70%;
 }
 
-.skills__img{
+.skills__sql {
+  width: 60%;
+}
+
+.skills__img {
   border-radius: .5rem;
 }
 
 /* ===== TRAYECTORIA =====*/
-.work__container{
+.work__container {
   overflow: hidden;
   text-align: center;
   margin: auto;
