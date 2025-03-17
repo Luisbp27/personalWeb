@@ -5,17 +5,20 @@ import {
     Button,
     Wrap,
     Icon,
+    Link as ChakraLink,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Text } from "@chakra-ui/react";
 import { Link } from "react-router";
+import Header from "@/components/Header";
 
 const Home = () => {
     return (
-        <Box position="relative" h="100vh">
+        <Box position="relative">
+            <Header />
             <AbsoluteCenter>
                 <VStack
-                    marginTop="-40"
+                    marginTop="80vh"
                     textAlign="center"
                     justifyContent="center"
                     gap="4"
@@ -24,16 +27,26 @@ const Home = () => {
                         Luis Barca
                     </Text>
                     <Text fontSize="2xl">
-                        Computer engineer, now working as a SWA at{" "}
-                        <a href="https://es.nttdata.com/">NTT Data Spain</a>
+                        Computer engineer, now working as a SWA at
+                        <ChakraLink
+                            variant="underline"
+                            href="https://es.nttdata.com/"
+                        >
+                            NTT Data Spain
+                        </ChakraLink>
                     </Text>
 
-                    <Button w="50%" m="4" p="8" fontSize="2xl">
+                    <Button rounded="2xl" m="4" p="8" fontSize="2xl">
                         <Link to="/projects">View my work</Link>
                     </Button>
 
                     <Wrap gap="8">
-                        <Icon as={FaGithub} w="8" h="8" />
+                        <Icon
+                            as={FaGithub}
+                            href="https://www.github.com"
+                            w="8"
+                            h="8"
+                        />
                         <Icon as={FaLinkedin} w="8" h="8" />
                         <Icon as={FaTwitter} w="8" h="8" />
                     </Wrap>
