@@ -18,7 +18,7 @@ const Header = () => {
         <Box as="header" p="4">
             <Flex justifyContent="space-between" alignItems="center">
                 <Text fontSize="xl" fontWeight="bold" marginLeft="4">
-                    Luis Barca
+                    <Link to="/">Luis Barca</Link>
                 </Text>
 
                 {isMobile ? (

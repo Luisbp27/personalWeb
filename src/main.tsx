@@ -10,7 +10,7 @@ import { Theme } from "@chakra-ui/react";
 createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
         <ChakraProvider value={defaultSystem}>
-            <Theme appearance="light">
+            <Theme appearance="dark">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/projects" element={<Projects />} />
