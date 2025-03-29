@@ -7,9 +7,11 @@ import {
     Portal,
     useBreakpointValue,
     Menu,
+    Group,
 } from "@chakra-ui/react";
 import { IoMenu } from "react-icons/io5";
 import { Link } from "react-router";
+import { ColorModeButton } from "@/components/ui/color-mode";
 
 const Header = () => {
     const fontSizeText = useBreakpointValue({
@@ -28,58 +30,61 @@ const Header = () => {
                     <Link to="/">Luis Barca</Link>
                 </Text>
 
-                {isMobile ? (
-                    <Menu.Root>
-                        <Menu.Trigger asChild>
-                            <Button variant="outline" size="sm">
-                                <IoMenu />
-                            </Button>
-                        </Menu.Trigger>
-                        <Portal>
-                            <Menu.Positioner>
-                                <Menu.Content>
-                                    <Menu.Item value="new-txt">
-                                        <Link to="/">Home</Link>
-                                    </Menu.Item>
-                                    <Menu.Item value="new-file">
-                                        <Link to="/projects">Projects</Link>
-                                    </Menu.Item>
-                                    <Menu.Item value="new-win">
-                                        <Link to="/about">About</Link>
-                                    </Menu.Item>
-                                </Menu.Content>
-                            </Menu.Positioner>
-                        </Portal>
-                    </Menu.Root>
-                ) : (
-                    <HStack
-                        textSizeAdjust={fontSizeText}
-                        gap="8"
-                        marginRight="8"
-                    >
-                        <Text
-                            fontSize={fontSizeText}
-                            cursor="pointer"
-                            _hover={{ textDecoration: "underline" }}
+                <Group>
+                    <ColorModeButton />
+                    {isMobile ? (
+                        <Menu.Root>
+                            <Menu.Trigger asChild>
+                                <Button variant="outline" size="sm">
+                                    <IoMenu />
+                                </Button>
+                            </Menu.Trigger>
+                            <Portal>
+                                <Menu.Positioner>
+                                    <Menu.Content>
+                                        <Menu.Item value="new-txt">
+                                            <Link to="/">Home</Link>
+                                        </Menu.Item>
+                                        <Menu.Item value="new-file">
+                                            <Link to="/projects">Projects</Link>
+                                        </Menu.Item>
+                                        <Menu.Item value="new-win">
+                                            <Link to="/about">About</Link>
+                                        </Menu.Item>
+                                    </Menu.Content>
+                                </Menu.Positioner>
+                            </Portal>
+                        </Menu.Root>
+                    ) : (
+                        <HStack
+                            textSizeAdjust={fontSizeText}
+                            gap="8"
+                            marginRight="8"
                         >
-                            <Link to="/">Home</Link>
-                        </Text>
-                        <Text
-                            fontSize={fontSizeText}
-                            cursor="pointer"
-                            _hover={{ textDecoration: "underline" }}
-                        >
-                            <Link to="/projects">Projects</Link>
-                        </Text>
-                        <Text
-                            fontSize={fontSizeText}
-                            cursor="pointer"
-                            _hover={{ textDecoration: "underline" }}
-                        >
-                            <Link to="/about">About</Link>
-                        </Text>
-                    </HStack>
-                )}
+                            <Text
+                                fontSize={fontSizeText}
+                                cursor="pointer"
+                                _hover={{ textDecoration: "underline" }}
+                            >
+                                <Link to="/">Home</Link>
+                            </Text>
+                            <Text
+                                fontSize={fontSizeText}
+                                cursor="pointer"
+                                _hover={{ textDecoration: "underline" }}
+                            >
+                                <Link to="/projects">Projects</Link>
+                            </Text>
+                            <Text
+                                fontSize={fontSizeText}
+                                cursor="pointer"
+                                _hover={{ textDecoration: "underline" }}
+                            >
+                                <Link to="/about">About</Link>
+                            </Text>
+                        </HStack>
+                    )}
+                </Group>
             </Flex>
         </Box>
     );
