@@ -12,20 +12,27 @@ import { IoMenu } from "react-icons/io5";
 import { Link } from "react-router";
 
 const Header = () => {
+    const fontSizeText = useBreakpointValue({
+        base: "md",
+        md: "xl",
+        lg: "2xl",
+        xl: "2xl",
+    });
+
     const isMobile = useBreakpointValue({ base: true, md: false });
 
     return (
         <Box as="header" p="4">
             <Flex justifyContent="space-between" alignItems="center">
-                <Text fontSize="xl" fontWeight="bold" marginLeft="4">
+                <Text fontSize={fontSizeText} fontWeight="bold" marginLeft="4">
                     <Link to="/">Luis Barca</Link>
                 </Text>
 
                 {isMobile ? (
-                    <Menu.Root >
+                    <Menu.Root>
                         <Menu.Trigger asChild>
                             <Button variant="outline" size="sm">
-                                <IoMenu/>
+                                <IoMenu />
                             </Button>
                         </Menu.Trigger>
                         <Portal>
@@ -40,38 +47,36 @@ const Header = () => {
                                     <Menu.Item value="new-win">
                                         <Link to="/about">About</Link>
                                     </Menu.Item>
-                                    <Menu.Item value="open-file">
-                                        <Link to="/contact">Contact</Link>
-                                    </Menu.Item>
                                 </Menu.Content>
                             </Menu.Positioner>
                         </Portal>
                     </Menu.Root>
                 ) : (
-                    <HStack gap="8" marginRight="8">
+                    <HStack
+                        textSizeAdjust={fontSizeText}
+                        gap="8"
+                        marginRight="8"
+                    >
                         <Text
+                            fontSize={fontSizeText}
                             cursor="pointer"
                             _hover={{ textDecoration: "underline" }}
                         >
                             <Link to="/">Home</Link>
                         </Text>
                         <Text
+                            fontSize={fontSizeText}
                             cursor="pointer"
                             _hover={{ textDecoration: "underline" }}
                         >
                             <Link to="/projects">Projects</Link>
                         </Text>
                         <Text
+                            fontSize={fontSizeText}
                             cursor="pointer"
                             _hover={{ textDecoration: "underline" }}
                         >
                             <Link to="/about">About</Link>
-                        </Text>
-                        <Text
-                            cursor="pointer"
-                            _hover={{ textDecoration: "underline" }}
-                        >
-                            <Link to="/contact">Contact</Link>
                         </Text>
                     </HStack>
                 )}
