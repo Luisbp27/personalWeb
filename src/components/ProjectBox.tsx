@@ -5,14 +5,13 @@ import {
     useBreakpointValue,
     HStack,
     Tag,
-    AspectRatio,
 } from "@chakra-ui/react";
 
 interface ProjectBoxProps {
     title: string;
-    image: string;
     description: string;
-    tags: string[];
+    image: string;
+    tags: { label: string[]; colorPalette: string }[];
 }
 
 const ProjectBox = ({ title, description, image, tags }: ProjectBoxProps) => {
@@ -24,47 +23,47 @@ const ProjectBox = ({ title, description, image, tags }: ProjectBoxProps) => {
     const fontSizeText = useBreakpointValue({
         base: "xs",
         md: "sm",
-        lg: "lg",
+        lg: "md",
     });
+
     return (
-        <AspectRatio>
-            <Box
-                background="black.200"
+        <Box
+            background="blackAlpha.100"
+            w={{ base: "300px", md: "400px" }}
+            h={{ base: "300px", md: "400px" }}
+            m="30px"
+            boxShadow="xl"
+            borderColor="white"
+            display="flex"
+            flexDirection="column"
+        >
+            <Image
+                src={image}
+                alt={title}
                 width="100%"
-                height="30vh"
-                padding="2"
-                borderRadius="md"
-                boxShadow="xl"
-            >
-                <Image
-                    src={image}
-                    alt={title}
-                    width="100%"
-                    height="40%"
-                    objectFit="cover"
-                    borderRadius="md"
-                />
+                height={{ base: "40%", md: "50%", lg: "50%", xl: "60%" }}
+            />
+            <Box p="4" flex="1" mb="-4">
                 <Text fontSize={fontSizeHeading} fontWeight="bold" mt="2">
                     {title}
                 </Text>
-                <Text fontSize={fontSizeText} color="gray.600">
+                <Text fontSize={fontSizeText} color="gray.600" mt="2">
                     {description}
                 </Text>
-                <HStack>
-                    {tags.map((tag, index) => (
-                        <Tag.Root
-                            key={index}
-                            size="sm"
-                            variant="solid"
-                            mt="2"
-                            color="green.400"
-                        >
-                            {tag}
-                        </Tag.Root>
-                    ))}
-                </HStack>
             </Box>
-        </AspectRatio>
+            <HStack p="4" gap="2">
+                {tags.map((tag, index) => (
+                    <Tag.Root
+                        key={index}
+                        textStyle={fontSizeText}
+                        variant="surface"
+                        colorPalette={tag.colorPalette}
+                    >
+                        {tag.label}
+                    </Tag.Root>
+                ))}
+            </HStack>
+        </Box>
     );
 };
 
