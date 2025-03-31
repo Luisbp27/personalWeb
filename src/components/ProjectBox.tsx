@@ -29,8 +29,8 @@ const ProjectBox = ({ title, description, image, tags }: ProjectBoxProps) => {
     return (
         <Box
             background="blackAlpha.100"
-            w={{ base: "300px", md: "400px" }}
-            h={{ base: "300px", md: "400px" }}
+            w={{ base: "300px", md: "450px" }}
+            h={{ base: "300px", md: "450px" }}
             m="30px"
             boxShadow="xl"
             borderColor="white"
