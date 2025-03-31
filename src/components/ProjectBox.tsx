@@ -5,6 +5,7 @@ import {
     useBreakpointValue,
     HStack,
     Tag,
+    Link,
 } from "@chakra-ui/react";
 
 interface ProjectBoxProps {
@@ -12,9 +13,11 @@ interface ProjectBoxProps {
     description: string;
     image: string;
     tags: { label: string[]; colorPalette: string }[];
+    link: string;
 }
+import { LuExternalLink } from "react-icons/lu";
 
-const ProjectBox = ({ title, description, image, tags }: ProjectBoxProps) => {
+const ProjectBox = ({ title, description, image, tags, link }: ProjectBoxProps) => {
     const fontSizeHeading = useBreakpointValue({
         base: "sm",
         md: "md",
@@ -45,7 +48,7 @@ const ProjectBox = ({ title, description, image, tags }: ProjectBoxProps) => {
             />
             <Box p="4" flex="1" mb="-4">
                 <Text fontSize={fontSizeHeading} fontWeight="bold" mt="2">
-                    {title}
+                    <Link href={link}>{title} <LuExternalLink/></Link>
                 </Text>
                 <Text fontSize={fontSizeText} color="gray.600" mt="2">
                     {description}

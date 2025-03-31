@@ -39,17 +39,20 @@ const projectsData = [
         description: "Which are the type of passengers that survived? There is any pattern?",
         image: "../../assets/images/titanic.webp",
         tags: ["Python", "Machine Learning", "Data Science"],
+        link: "https://github.com/Luisbp27/practica2_ia",
     },
     {
         title: "Bash clone",
         description: "A simple clone of the bash shell",
         image: "../../assets/images/bash.webp",
         tags: ["C", "Linux", "Operating System"],
+        link: "https://github.com/Luisbp27/bash"
     },
     {
         title: "Housing Price Prediction",
         description: "Predict the price of a house based on its features",
         image: "../../assets/images/housing.webp",
         tags: ["Python", "Machine Learning", "Data Science"],
+        link: "https://github.com/Luisbp27/housePredict"
     },
 ];
