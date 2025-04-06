@@ -29,7 +29,7 @@ const About = () => {
             <AbsoluteCenter>
                 <VStack textAlign="center" justifyContent="center">
                     <Image
-                        src="../../assets/images/profile.png"
+                        src="https://res.cloudinary.com/luisbp27/image/upload/v1743974551/portfolio/tapi26tc0shodxfakfdd.png"
                         boxSize={{
                             base: "100px",
                             md: "150px",
