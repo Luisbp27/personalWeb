@@ -51,6 +51,9 @@ const Header = () => {
                                         <Menu.Item value="new-win">
                                             <Link to="/about">About</Link>
                                         </Menu.Item>
+                                        <Menu.Item value="new-win">
+                                            <Link to="/contact">Contact</Link>
+                                        </Menu.Item>
                                     </Menu.Content>
                                 </Menu.Positioner>
                             </Portal>
@@ -82,6 +85,13 @@ const Header = () => {
                             >
                                 <Link to="/about">About</Link>
                             </Text>
+                            <Text
+                                fontSize={fontSizeText}
+                                cursor="pointer"
+                                _hover={{ textDecoration: "underline" }}
+                            >
+                                <Link to="/Contact">Contact</Link>
+                            </Text>
                         </HStack>
                     )}
                 </Group>
@@ -91,9 +101,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*
-import Flag from "react-flagkit";
-<Text cursor="pointer"><Flag country="ES"/></Text>
-<Text cursor="pointer"><Flag country="GB"/></Text>
-*/
