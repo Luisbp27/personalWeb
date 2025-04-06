@@ -9,6 +9,7 @@ const tagMapping: Record<string, { label: string; colorPalette: string }> = {
     C: { label: "C", colorPalette: "blue" },
     Linux: { label: "Linux", colorPalette: "cyan" },
     "Operating System": { label: "Operating System", colorPalette: "yellow" },
+    Economics: { label: "Economics", colorPalette: "red"}
 };
 
 const Projects = () => {
@@ -35,21 +36,31 @@ export default Projects;
 
 const projectsData = [
     {
+        title: "Chocolate Sales Analysis",
+        description: "Explore sales behavior, profitability, and commercial segmentation using clustering and PCA.",
+        image: "../../assets/images/choco_sales.png",
+        tags: ["Python", "Data Science", "Economics"],
+        link: "https://github.com/Luisbp27/chocoSales"
+    },
+    {
         title: "Titanic: Machine Learning from Disaster",
         description: "Which are the type of passengers that survived? There is any pattern?",
-        image: "../../assets/images/titanic.webp",
+        image: "../../assets/images/titanic.png",
         tags: ["Python", "Machine Learning", "Data Science"],
+        link: "https://github.com/Luisbp27/practica2_ia",
     },
     {
         title: "Bash clone",
         description: "A simple clone of the bash shell",
-        image: "../../assets/images/bash.webp",
+        image: "../../assets/images/bash.png",
         tags: ["C", "Linux", "Operating System"],
+        link: "https://github.com/Luisbp27/bash"
     },
     {
         title: "Housing Price Prediction",
         description: "Predict the price of a house based on its features",
-        image: "../../assets/images/housing.webp",
+        image: "../../assets/images/housing.png",
         tags: ["Python", "Machine Learning", "Data Science"],
+        link: "https://github.com/Luisbp27/housePredict"
     },
 ];
