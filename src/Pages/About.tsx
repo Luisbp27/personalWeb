@@ -5,7 +5,6 @@ import {
     Image,
     AbsoluteCenter,
     VStack,
-    Button,
     Link as ChakraLink,
     useBreakpointValue,
 } from "@chakra-ui/react";
