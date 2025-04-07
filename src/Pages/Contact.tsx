@@ -18,7 +18,7 @@ import { Toaster, toaster } from "@/components/ui/toaster";
 
 interface FormValues {
     name: string;
-    mail: string;
+    email: string;
     message: string;
 }
 
@@ -112,18 +112,18 @@ const Contact = () => {
                                 </Field.ErrorText>
                             </Field.Root>
 
-                            <Field.Root invalid={!!errors.mail}>
+                            <Field.Root invalid={!!errors.email}>
                                 <Field.Label textStyle={fontSizeText}>
                                     Email
                                 </Field.Label>
                                 <Input
-                                    {...register("mail", {
+                                    {...register("email", {
                                         required: "Your email is required",
                                     })}
                                     placeholder="Your email"
                                 />
                                 <Field.ErrorText>
-                                    {errors.mail?.message}
+                                    {errors.email?.message}
                                 </Field.ErrorText>
                             </Field.Root>
 
