@@ -6,6 +6,7 @@ import {
     AbsoluteCenter,
     VStack,
     Button,
+    Link as ChakraLink,
     useBreakpointValue,
 } from "@chakra-ui/react";
 
@@ -40,7 +41,7 @@ const About = () => {
                     />
                     <VStack
                         gap={{ base: 4, md: 6, lg: 6 }}
-                        w={{ base: "180%", md: "150%", lg: "120%", xl: "100%" }}
+                        w={{ base: "180%", md: "150%", lg: "120%", xl: "60%" }}
                         textAlign="center"
                     >
                         <Text
@@ -62,19 +63,8 @@ const About = () => {
                         </Text>
                         <Text fontSize={fontSizeText}>
                             If you want to know more about my projects, don't
-                            hesitate to contact me! 🚀
+                            hesitate to <ChakraLink variant="underline" href="/contact">contact me</ChakraLink>! 🚀
                         </Text>
-                        <Button
-                            asChild
-                            rounded="lg"
-                            px={{ base: 4, md: 6, lg: 8, xl: 10 }}
-                            py={{ base: 2, md: 6, lg: 8, xl: 8 }}
-                            fontSize={fontSizeText}
-                            mt="4"
-                            colorPalette="blue"
-                        >
-                            <a href="mailto:luisbarcapons@gmail.com">Get in touch</a>
-                        </Button>
                     </VStack>
                 </VStack>
             </AbsoluteCenter>
