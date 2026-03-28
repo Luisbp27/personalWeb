@@ -42,7 +42,7 @@ const Home = () => {
                         Luis Barca
                     </Text>
                     <Text fontSize={fontSizeText}>
-                        Computer engineer, now working as a SWA at{" "}
+                        Computer engineer, now working as a Data Engineer at{" "}
                         <ChakraLink
                             variant="underline"
                             href="https://es.nttdata.com/"

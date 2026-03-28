@@ -55,10 +55,10 @@ const About = () => {
                             appasionate about tech, data and IA.
                         </Text>
                         <Text fontSize={fontSizeText}>
-                            In my spare time I like to train on efficiency and
-                            process optimisation, looking for innovative
-                            solutions that improve user experience and project
-                            management.
+                            As well as working as a data engineer, I’m also developing
+                            my skills as a data analyst and BI specialist. In my spare time,
+                            I try to expand my knowledge of infrastructure (I have a home-server running OMV and Docker)
+                            and the development and consultancy of bespoke software for businesses.
                         </Text>
                         <Text fontSize={fontSizeText}>
                             If you want to know more about my projects, don't
