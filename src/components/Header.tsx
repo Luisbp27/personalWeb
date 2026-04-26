@@ -90,7 +90,7 @@ const Header = () => {
                                 cursor="pointer"
                                 _hover={{ textDecoration: "underline" }}
                             >
-                                <Link to="/Contact">Contact</Link>
+                                <Link to="/contact">Contact</Link>
                             </Text>
                         </HStack>
                     )}
