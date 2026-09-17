@@ -1,51 +1,38 @@
 {
-    "name": "portfolio",
+    "name": "luisbarca-web",
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "engines": {
+        "node": ">=22.12.0"
+    },
     "scripts": {
-        "dev": "vite",
-        "build": "tsc -b && vite build",
+        "dev": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "check": "astro check",
         "lint": "eslint .",
-        "preview": "vite preview"
+        "format": "prettier --write ."
     },
     "dependencies": {
-        "@chakra-ui/react": "^3.13.0",
+        "@astrojs/sitemap": "^3.7.4",
         "@emailjs/browser": "^4.4.1",
-        "@emotion/react": "^11.14.0",
-        "axios": "^1.8.3",
-        "next": "^15.2.2",
-        "next-themes": "^0.4.6",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "react-flagkit": "^2.0.4",
-        "react-hook-form": "^7.55.0",
-        "react-icons": "^5.5.0",
-        "react-redux": "^9.2.0",
-        "react-router": "^7.3.0",
-        "react-router-dom": "^7.3.0",
-        "redux": "^5.0.1"
+        "@fontsource-variable/inter": "^5.3.0",
+        "@tailwindcss/vite": "^4.3.3",
+        "astro": "7.3.2",
+        "sharp": "^0.35.4",
+        "tailwindcss": "^4.3.3"
     },
     "devDependencies": {
+        "@astrojs/check": "^0.9.10",
         "@eslint/js": "^9.21.0",
-        "@types/react": "^19.0.10",
-        "@types/react-dom": "^19.0.4",
-        "@vitejs/plugin-react-swc": "^3.8.0",
         "eslint": "^9.21.0",
-        "eslint-plugin-react-hooks": "^5.1.0",
-        "eslint-plugin-react-refresh": "^0.4.19",
+        "eslint-plugin-astro": "^3.2.0",
         "globals": "^15.15.0",
         "prettier": "^3.5.3",
+        "prettier-plugin-astro": "^1.0.0",
+        "prettier-plugin-tailwindcss": "^0.8.1",
         "typescript": "~5.7.2",
-        "typescript-eslint": "^8.24.1",
-        "vite": "^6.2.2",
-        "vite-tsconfig-paths": "^5.1.4"
-    },
-    "pnpm": {
-        "ignoredBuiltDependencies": [
-            "@swc/core",
-            "esbuild",
-            "sharp"
-        ]
+        "typescript-eslint": "^8.24.1"
     }
 }

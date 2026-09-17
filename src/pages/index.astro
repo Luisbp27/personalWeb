@@ -1,0 +1,40 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+---
+
+<Layout
+    title="Luis Barca — Data Engineer"
+    description="Computer engineer working as a Data Engineer at NTT Data Spain. Explore my projects and get in touch."
+>
+    <section class="relative flex min-h-[calc(100dvh-12rem)] items-center justify-center overflow-hidden px-6 py-20">
+        <div
+            class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-950/40"
+            aria-hidden="true"
+        ></div>
+
+        <div class="flex max-w-2xl animate-fade-up flex-col items-center gap-8 text-center">
+            <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-6xl">
+                Luis Barca
+            </h1>
+            <p class="text-lg text-pretty text-gray-600 sm:text-xl dark:text-gray-300">
+                Computer engineer, now working as a Data Engineer at{" "}
+                <a
+                    href="https://es.nttdata.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-medium text-blue-600 underline-offset-4 hover:underline dark:text-blue-400"
+                >
+                    NTT Data Spain
+                </a>
+            </p>
+            <a
+                href="/projects"
+                class="rounded-lg bg-blue-600 px-7 py-3.5 text-base font-medium text-white shadow-sm transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 sm:text-lg"
+            >
+                View my work
+            </a>
+            <SocialLinks iconClass="size-7" class="pt-2" />
+        </div>
+    </section>
+</Layout>

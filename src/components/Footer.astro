@@ -1,0 +1,14 @@
+---
+import SocialLinks from "@/components/SocialLinks.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-gray-200 dark:border-gray-800">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+            © {year} Luis Barca
+        </p>
+        <SocialLinks iconClass="size-5" />
+    </div>
+</footer>
