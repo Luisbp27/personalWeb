@@ -1,9 +1,3 @@
-import emailjs from "@emailjs/browser";
-
-const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
-
 const fields = [
     { name: "name", requiredMessage: "Your name is required" },
     { name: "email", requiredMessage: "Your email is required" },
@@ -15,6 +9,12 @@ const invalidClasses = [
     "focus:!border-red-500",
     "focus:!ring-red-500/30",
 ];
+
+let pageLoadedAt = Date.now();
+
+document.addEventListener("astro:page-load", () => {
+    pageLoadedAt = Date.now();
+});
 
 function getField(
     form: HTMLFormElement,
@@ -113,9 +113,22 @@ document.addEventListener("submit", async (event) => {
     }
 
     try {
-        await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, {
-            publicKey: PUBLIC_KEY,
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: getField(form, "name")?.value ?? "",
+                email: getField(form, "email")?.value ?? "",
+                message: getField(form, "message")?.value ?? "",
+                company: honeypot?.value ?? "",
+                startedAt: pageLoadedAt,
+            }),
         });
+
+        if (!response.ok) {
+            throw new Error(`Request failed with status ${response.status}`);
+        }
+
         showToast("Email sent successfully!", "success");
         form.reset();
     } catch {

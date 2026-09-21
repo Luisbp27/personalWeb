@@ -5,7 +5,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
-    { ignores: ["dist", ".astro"] },
+    { ignores: ["dist", ".astro", ".vercel"] },
     js.configs.recommended,
     ...tseslint.configs.recommended,
     ...astro.configs.recommended,
