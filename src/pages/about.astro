@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import profile from "@/assets/profile.png";
+---
+
+<Layout
+    title="About — Luis Barca"
+    description="Computer engineer passionate about tech, data and AI. Data engineer at NTT Data Spain, data analyst and BI enthusiast."
+>
+    <section class="mx-auto max-w-2xl px-6 py-16 text-center sm:py-20">
+        <div class="flex animate-fade-up flex-col items-center gap-6">
+            <Image
+                src={profile}
+                alt="Luis Barca"
+                width={176}
+                densities={[1, 2]}
+                class="size-36 rounded-full object-cover ring-4 ring-gray-100 sm:size-44 dark:ring-gray-800"
+            />
+            <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">
+                About Me
+            </h1>
+            <div class="flex flex-col gap-5 text-base text-gray-600 sm:text-lg dark:text-gray-300">
+                <p>
+                    Hi! I'm Luis Barca, computer engineer and passionate about
+                    tech, data and AI.
+                </p>
+                <p>
+                    As well as working as a data engineer, I'm also developing
+                    my skills as a data analyst and BI specialist. In my spare
+                    time, I try to expand my knowledge of infrastructure (I have
+                    a home-server running OMV and Docker) and the development
+                    and consultancy of bespoke software for businesses.
+                </p>
+                <p>
+                    If you want to know more about my projects, don't hesitate
+                    to{" "}
+                    <a
+                        href="https://www.linkedin.com/in/luisbarcapons/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-medium text-blue-600 underline-offset-4 hover:underline dark:text-blue-400"
+                    >
+                        contact me
+                    </a>
+                    ! 🚀
+                </p>
+            </div>
+        </div>
+    </section>
+</Layout>
