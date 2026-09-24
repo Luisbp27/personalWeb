@@ -1,16 +1,29 @@
 ---
 import ThemeToggle from "@/components/ThemeToggle.astro";
 
-const links = [
+interface NavLink {
+    href: string;
+    label: string;
+    external?: boolean;
+}
+
+const links: NavLink[] = [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    {
+        href: "https://www.linkedin.com/in/luisbarcapons/",
+        label: "Contact",
+        external: true,
+    },
 ];
 
 const currentPath = Astro.url.pathname;
-const isActive = (href: string) =>
-    href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+const isActive = (link: NavLink) =>
+    !link.external &&
+    (link.href === "/"
+        ? currentPath === "/"
+        : currentPath.startsWith(link.href));
 ---
 
 <header
@@ -30,10 +43,12 @@ const isActive = (href: string) =>
                 {links.map((link) => (
                     <a
                         href={link.href}
-                        aria-current={isActive(link.href) ? "page" : undefined}
+                        target={link.external ? "_blank" : undefined}
+                        rel={link.external ? "noopener noreferrer" : undefined}
+                        aria-current={isActive(link) ? "page" : undefined}
                         class:list={[
                             "rounded-md px-3 py-2 text-sm font-medium transition hover:bg-gray-100 dark:hover:bg-gray-800",
-                            isActive(link.href)
+                            isActive(link)
                                 ? "text-blue-600 dark:text-blue-400"
                                 : "text-gray-600 dark:text-gray-300",
                         ]}
@@ -73,12 +88,16 @@ const isActive = (href: string) =>
                     {links.map((link) => (
                         <a
                             href={link.href}
-                            aria-current={
-                                isActive(link.href) ? "page" : undefined
+                            target={link.external ? "_blank" : undefined}
+                            rel={
+                                link.external
+                                    ? "noopener noreferrer"
+                                    : undefined
                             }
+                            aria-current={isActive(link) ? "page" : undefined}
                             class:list={[
                                 "block rounded-md px-3 py-2 text-sm font-medium transition hover:bg-gray-100 dark:hover:bg-gray-800",
-                                isActive(link.href)
+                                isActive(link)
                                     ? "text-blue-600 dark:text-blue-400"
                                     : "text-gray-600 dark:text-gray-300",
                             ]}
