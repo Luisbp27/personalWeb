@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://luisbarca.es",
+    site: "https://www.luisbarca.es",
     integrations: [sitemap()],
     redirects: {
         "/contact": "https://www.linkedin.com/in/luisbarcapons/",
